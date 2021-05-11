@@ -1,4 +1,4 @@
-package ec.edu.ups.agenda.servlet;
+package ec.edu.ups.agenda.controlador;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,27 +7,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ec.edu.ups.agenda.dao.DAOFactory;
+import ec.edu.ups.agenda.dao.UsuarioDAO;
+
 /**
- * Servlet implementation class CrearCuentaServlet
+ * Servlet implementation class CrearTablaController
  */
-@WebServlet("/CrearCuentaServlet")
-public class CrearCuentaServlet extends HttpServlet {
+@WebServlet("/CrearTablaController")
+public class CrearTablaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private UsuarioDAO usuarioDAO;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearCuentaServlet() {
+    public CrearTablaController() {
         super();
-        // TODO Auto-generated constructor stub
+        usuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String url = null;
+		
+		try {
+			usuarioDAO.crearTabla();
+			url = "/Menu.jsp";
+		} catch (Exception e) {
+			url = "Error.jsp";
+		}
+		
+		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}
 
 	/**

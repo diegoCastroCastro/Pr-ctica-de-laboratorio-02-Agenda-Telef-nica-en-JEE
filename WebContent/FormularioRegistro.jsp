@@ -9,7 +9,7 @@
 </head>
 <body>
 	
-	<form action="" class="form-register">
+	<form action="/Agenda/CrearUsuarioController" class="form-register" method="post">
 		<h4>Formulario Registro</h4>
 		<input class="controls" type="text" name="cedula" id="cedula" placeholder="Ingrese su cedula" /><br>
 		<input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese sus nombres" /><br>
@@ -21,6 +21,5 @@
 		<p><a href="#">¿Ya tengo cuenta?</a></p>
 	</form>
 	
-
 </body>
 </html>

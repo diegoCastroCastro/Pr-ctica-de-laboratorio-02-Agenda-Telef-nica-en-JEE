@@ -1,8 +1,11 @@
 package ec.edu.ups.agenda.clases;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Usuario {
+public class Usuario implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String cedula;
 	private String nombre;
@@ -14,6 +17,19 @@ public class Usuario {
 	public Usuario() {
 		
 	}
+	
+	public Usuario(String cedula, String nombre, String apellido, String correo, String contrasenia,
+			List<Telefono> listaTelefono) {
+		super();
+		this.cedula = cedula;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.contrasenia = contrasenia;
+		this.listaTelefono = listaTelefono;
+	}
+
+
 
 	public String getCedula() {
 		return cedula;
