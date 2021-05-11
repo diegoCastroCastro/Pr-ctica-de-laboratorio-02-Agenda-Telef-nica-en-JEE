@@ -22,7 +22,7 @@
 		</form>
 	</div>
 	<div id="contenedor2">
-		<form action="" id="form2">
+		<form action="/Agenda/CrearUsuarioController" id="form2">
 			<input type="submit" value="Create Account" />
 		</form>
 		<div id="referencias">

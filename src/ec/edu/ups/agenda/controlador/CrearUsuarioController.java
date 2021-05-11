@@ -47,11 +47,14 @@ public class CrearUsuarioController extends HttpServlet {
 		
 		try {
 			usuario.setCedula(request.getParameter("cedula"));
-			usuario.setNombre(request.getParameter("nombre"));
-			usuario.setApellido(request.getParameter("apellido"));
+			usuario.setNombre(request.getParameter("nombres")) ;
+			usuario.setApellido(request.getParameter("apellidos"));
 			usuario.setCorreo(request.getParameter("correo"));
 			usuario.setContrasenia(request.getParameter("contrasenia"));
 			usuarioDAO.crear(usuario);
+			
+			System.out.println("Registro: " + usuario.getCedula() + " " + usuario.getNombre() + " " + 
+			usuario.getApellido() + " " + usuario.getCorreo() + " " + usuario.getContrasenia());
 			
 			url = "/index.jsp";
 			
