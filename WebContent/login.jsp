@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="css/estilo.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -26,11 +26,11 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
 <link rel="stylesheet" type="text/css" media="screen" href="css/FormularioRegistro.css" />
+
 <title>Login</title>
 </head>
 <body>
-
-	<nav class="navbar">
+<nav class="navbar">
 
 		<div class="container-fluid">
 		
@@ -42,7 +42,7 @@
 					Somos</a>
 			</div>
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar Persona</a>
+				<a class="navbar-brand" href="#">Buscar Persona</a>
 			</div>
 			 <div class="navbar-header">
 				<a class="navbar-brand" href="/Agenda/login.jsp">Login</a>
@@ -51,12 +51,25 @@
 		</div>
 	</nav>
 
-
-	<div class="jumbotron text-center">
-		<h1>Bienvenido a Agenda Telefonica</h1>
-		<p>Esto es una practica de JEE usando bootstrap y estilos css</p>
+	<div id="contenedor1">
+		<h1>Sing in</h1>
+		<form action="/Agenda/LoginServlet"  method="get" id="form1">
+			<img alt="" src="imagenes/login.PNG"> <input type="text"
+				name="correo" placeholder="usuario/correo" />
+			<hr>
+			<img alt="" src="imagenes/login.PNG"> <input type="password"
+				name="password" placeholder="Contraseña" />
+			<hr>
+			<input type="submit" value="Sing in" />
+		</form>
 	</div>
-
-
+	<div id="contenedor2">
+		<form  method="get" action="/Agenda/CrearUsuarioController" id="form2">
+			<input type="submit" value="Create Account" />
+		</form>
+		<div id="referencias">
+			<a>Diego</a> <a href="">Term of use</a> <a href="">Privacy Policy</a>
+		</div>
+	</div>
 </body>
 </html>

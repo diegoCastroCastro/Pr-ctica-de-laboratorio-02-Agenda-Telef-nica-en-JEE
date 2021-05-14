@@ -18,7 +18,7 @@
 		<input class="controls" type="password" name="contrasenia" id="contrasenia" placeholder="Ingrese su contraseña" />
 		<p>Estoy de acuerdo con <a href="#">Terminos y condiciones</a></p>
 		<input class="botons" type="submit" value="Registrar">
-		<p><a href="#">¿Ya tengo cuenta?</a></p>
+		<p><a href="/Agenda/index.jsp">¿Ya tengo cuenta?</a></p>
 	</form>
 	
 </body>

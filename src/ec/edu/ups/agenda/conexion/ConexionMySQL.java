@@ -12,11 +12,10 @@ public class ConexionMySQL {
 	Connection conexion = null;
 	Statement sentencia = null;
 	
-	
-	public String db = "jee";
-	public String url = "jdbc:mysql://localhost:3306/"+db;
+	 
+	public String url = "jdbc:mysql://localhost:3306/jee";
 	public String user = "root";
-	public String pass = "root";
+	public String pass = "user";
 	
 	public Connection Conectar() throws SQLException {
 		

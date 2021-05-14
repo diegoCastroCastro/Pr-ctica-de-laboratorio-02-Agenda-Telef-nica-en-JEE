@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
+ <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,11 +26,13 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
 <link rel="stylesheet" type="text/css" media="screen" href="css/FormularioRegistro.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/estilo.css" />
 <title>Login</title>
 </head>
 <body>
 
-	<nav class="navbar">
+
+<nav class="navbar">
 
 		<div class="container-fluid">
 		
@@ -51,12 +53,20 @@
 		</div>
 	</nav>
 
-
-	<div class="jumbotron text-center">
-		<h1>Bienvenido a Agenda Telefonica</h1>
-		<p>Esto es una practica de JEE usando bootstrap y estilos css</p>
-	</div>
-
-
+<div class="jumbotron text-center">
+  <h1>Objetivo del negocio</h1>
+  <p>Descripcion del tema usado</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2 style="color: white">OBJETIVO</h2>
+      <p style="color: white">Somo una empresa enfocada en la comunicacion ...</p>
+      <p style="color: white">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+	
 </body>
 </html>

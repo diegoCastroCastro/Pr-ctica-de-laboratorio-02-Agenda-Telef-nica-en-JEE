@@ -1,18 +1,35 @@
 package ec.edu.ups.agenda.clases;
 
-public class Telefono {
+import java.io.Serializable;
+
+public class Telefono implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private int codigo;
 	private String numero;
 	private String tipo;
 	private String operadora;
-	private Usuario usuario;
+	private String usuario;
 	
 	
 	public Telefono() {
 		
 	}
 	
+	
+	
+	public Telefono(int codigo, String numero, String tipo, String operadora,String usuario) {
+		super();
+		this.codigo = codigo;
+		this.numero = numero;
+		this.tipo = tipo;
+		this.operadora = operadora;
+		this.usuario = usuario;
+	}
+
+
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -37,11 +54,20 @@ public class Telefono {
 	public void setOperadora(String operadora) {
 		this.operadora = operadora;
 	}
-	public Usuario getUsuario() {
+	public String getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(Usuario usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Telefono [codigo=" + codigo + ", numero=" + numero + ", tipo=" + tipo + ", operadora=" + operadora
+				+ ", usuario=" + usuario + "]";
+	}
+
+	
 }

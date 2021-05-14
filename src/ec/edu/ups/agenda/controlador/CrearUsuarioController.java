@@ -20,6 +20,7 @@ public class CrearUsuarioController extends HttpServlet {
 	
 	private UsuarioDAO usuarioDAO;
 	private Usuario usuario;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,6 +37,9 @@ public class CrearUsuarioController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		getServletContext().getRequestDispatcher("/FormularioRegistro.jsp").forward(request, response);
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -43,6 +47,7 @@ public class CrearUsuarioController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String url = null;
 		
 		try {

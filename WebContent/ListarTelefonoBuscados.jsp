@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,16 +26,14 @@
 	href="css/estilo.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-<link rel="stylesheet" type="text/css" media="screen" href="css/FormularioRegistro.css" />
-<title>Login</title>
+
+<link rel="stylesheet" type="text/css" media="screen"
+	href="css/FormularioRegistro.css" />
+<title>Telefonos Listados</title>
 </head>
 <body>
-
 	<nav class="navbar">
-
 		<div class="container-fluid">
-		
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/Agenda/index.jsp">Agenda</a>
 			</div>
@@ -42,21 +42,24 @@
 					Somos</a>
 			</div>
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar Persona</a>
+				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar
+					Persona</a>
 			</div>
-			 <div class="navbar-header">
+			<div class="navbar-header">
 				<a class="navbar-brand" href="/Agenda/login.jsp">Login</a>
 			</div>
-
 		</div>
 	</nav>
 
-
 	<div class="jumbotron text-center">
-		<h1>Bienvenido a Agenda Telefonica</h1>
-		<p>Esto es una practica de JEE usando bootstrap y estilos css</p>
+		<h1>Resultados de telefono por cedula</h1>
+		<ul>  
+			<c:forEach var="idioma" items="${p1.listaTelefono}">
+				<h1>bucle</h1>
+				<li style="color: red">${idioma}</li>
+			</c:forEach>
+		</ul>
 	</div>
-
 
 </body>
 </html>

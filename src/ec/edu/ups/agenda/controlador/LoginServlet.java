@@ -10,49 +10,92 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ec.edu.ups.agenda.clases.Usuario;
+import ec.edu.ups.agenda.dao.DAOFactory;
+import ec.edu.ups.agenda.dao.UsuarioDAO;
+
 /**
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private Usuario usuario;
+	private UsuarioDAO usuarioDAO;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public LoginServlet() {
+
+		usuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
+		usuario = new Usuario();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String usuario = request.getParameter("usuario");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String usuar = request.getParameter("correo");
 		String password = request.getParameter("password");
 		
-		if (usuario.equals("diego") && password.equals("diego")){
+		usuario.setCorreo(usuar);
+		usuario.setContrasenia(password);
+		System.out.println("VALORES PASADOS DES >" + usuario.toString());
+
+		Usuario usu = usuarioDAO.login(usuario);
+		if (usu != null) {
+
 			HttpSession sesion = request.getSession(true);
-			sesion.setAttribute("usuario", usuario);
+			sesion.setAttribute("usuario", usuario.getNombre());
+			sesion.setAttribute("cedula", usuario.getCedula());
 			System.out.println("sesion TRUE");
-			RequestDispatcher d = getServletContext().getRequestDispatcher("/calculadora.jsp");
+			String cedu = usuario.getCedula();
+			request.getSession().setAttribute("usuario", usu.getNombre());
+			request.getSession().setAttribute("cedula", usu.getCedula());
+			request.setAttribute("peticion", "Conectado..");
+
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");
 			d.forward(request, response);
-		}else {
+		}
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String usuar = request.getParameter("correo");
+		String password = request.getParameter("password");
+		usuario.setCorreo(usuar);
+		usuario.setContrasenia(password);
+		System.out.println("VALORES PASADOS DES >" + usuario.toString());
+
+		Usuario usu = usuarioDAO.login(usuario);
+		if (usu != null) {
+
+			HttpSession sesion = request.getSession(true);
+			sesion.setAttribute("usuario", usuario.getNombre());
+			sesion.setAttribute("cedula", usuario.getCedula());
+			System.out.println("sesion TRUE");
+
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");
+			d.forward(request, response);
+		} else {
 			HttpSession sesion = request.getSession(false);
 			System.out.println("sesion FALSE");
 			RequestDispatcher d = getServletContext().getRequestDispatcher("/errorLogin.jsp");
 			d.forward(request, response);
-			
+
 		}
+
 	}
 
 }

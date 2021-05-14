@@ -38,14 +38,13 @@
 				<a class="navbar-brand" href="/Agenda/index.jsp">Agenda</a>
 			</div>
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/quienessomos.jsp">Quienes
-					Somos</a>
+				<a class="navbar-brand" href="/Agenda/quienessomos.jsp">Telefonos</a>
 			</div>
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar Persona</a>
+				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Chat</a>
 			</div>
 			 <div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/login.jsp">Login</a>
+				<a class="navbar-brand" href="/Agenda/login.jsp">Cerrar Sesion</a>
 			</div>
 
 		</div>

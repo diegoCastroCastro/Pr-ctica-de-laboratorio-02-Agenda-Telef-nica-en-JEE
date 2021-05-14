@@ -2,11 +2,14 @@ package ec.edu.ups.agenda.mysql.jdbc;
 
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import ec.edu.ups.agenda.clases.Usuario;
 import ec.edu.ups.agenda.dao.UsuarioDAO;
 
+import ec.edu.ups.agenda.clases.Telefono;
 public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements UsuarioDAO{
 
 	@Override
@@ -30,6 +33,33 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 		
 		return null;
 	}
+	@Override
+	public Usuario login(Usuario usuario) {
+
+		// TODO Auto-generated method stub
+		List<Telefono> lista = new ArrayList<Telefono>(); 
+		Usuario tele = null;		
+		ResultSet rs = conexion.query("SELECT * FROM Usuario  where correo ='" + usuario.getCorreo()+"' and contrasenia ='"+usuario.getContrasenia()+"'");
+		
+		
+		try {  
+			if (rs != null && rs.next()) { 
+				tele = new Usuario(rs.getString("cedula"), rs.getString("nombre"), rs.getString("apellido"),rs.getString("correo"), rs.getString("contrasenia"),null);
+				System.out.println("Valor de telefono> "+tele.toString());
+			 
+				
+			}else {
+				System.out.println("no existe el usurio");
+			}
+
+		} catch (SQLException e) {
+			// TODO: handle exception
+			System.out.println("ERROR DE resultados" + e.getMessage());
+			return null;
+		}
+		return tele;
+	}
+
 
 	@Override
 	public void update(Usuario entity) {
@@ -43,10 +73,12 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 		
 	}
 
+	
 	@Override
-	public List<Usuario> find() {
+	public List<Usuario> find(Integer cedula) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+ 
 
 }

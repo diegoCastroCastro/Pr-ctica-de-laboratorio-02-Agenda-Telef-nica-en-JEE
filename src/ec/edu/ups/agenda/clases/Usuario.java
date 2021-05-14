@@ -12,7 +12,7 @@ public class Usuario implements Serializable{
 	private String apellido;
 	private String correo;
 	private String contrasenia;
-	private List<Telefono>listaTelefono;
+	private List<Telefono> listaTelefono;
 	
 	public Usuario() {
 		
@@ -30,6 +30,7 @@ public class Usuario implements Serializable{
 	}
 
 
+	
 
 	public String getCedula() {
 		return cedula;
@@ -78,5 +79,12 @@ public class Usuario implements Serializable{
 	public void setListaTelefono(List<Telefono> listaTelefono) {
 		this.listaTelefono = listaTelefono;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo
+				+ ", contrasenia=" + contrasenia + ", listaTelefono=" + listaTelefono + "]";
+	}
+	
 
 }
