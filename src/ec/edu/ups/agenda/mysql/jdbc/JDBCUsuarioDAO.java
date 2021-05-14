@@ -33,6 +33,7 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 		
 		return null;
 	}
+	
 	@Override
 	public Usuario login(Usuario usuario) {
 

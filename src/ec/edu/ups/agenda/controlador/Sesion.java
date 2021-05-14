@@ -72,14 +72,14 @@ public class Sesion extends HttpServlet {
 				"		<div class=\"container-fluid\">\r\n" + 
 				"		\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/index.jsp\">Agenda</a>\r\n" + 
+				"				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Agenda</a>\r\n" + 
 				"			</div>\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
 				"				<a class=\"navbar-brand\" href=\"/Agenda/crudtelefono\">Telefonos</a>\r\n" + 
 				"			</div>\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/BuscarPersona.jsp\">Chat</a>\r\n" + 
-				"			</div>\r\n" + 
+				"				<a class=\"navbar-brand\" href=\"/Agenda/BuscarPersona.jsp\">Buscar Persona</a>\r\n" + 
+				"			</div>" + 
 				"			 <div class=\"navbar-header\">\r\n" + 
 				"				<a class=\"navbar-brand\" href=\"/Agenda/login.jsp\">Cerrar Sesion</a>\r\n" + 
 				"			</div>\r\n" + 

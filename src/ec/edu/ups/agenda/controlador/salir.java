@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
  * @author ADMINX *
  */
 
-@WebServlet("/crudtelefono")
-public class crudtelefono extends HttpServlet {
+@WebServlet("/salir")
+public class salir extends HttpServlet {
 	
 	
 	@Override
@@ -110,5 +110,70 @@ public class crudtelefono extends HttpServlet {
 	}
 
 	
+	/*
+	HttpSession session; 
+	
+	@Override
+	public void init() throws ServletException{
+		System.out.println("Se instancia Parametros servlet");
+	}
+	 
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+  		
+		
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		 
+		 
+		int num = 0;
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html><head><title>SESIONES</title></head><body>");
+		session = request.getSession(true);
+		if(session.isNew()) {
+			out.println("<h1>GRACIAS POR ACCEDER A LA CALCULADORA</h1>");
+			out.println("<h1>Gracias por acceder a la calculadora</h1>");
+			String user =(String) session.getAttribute("usuario");
+			String cedu =(String) session.getAttribute("cedula");
+			out.println("<p>Usuario:" +user+"</p>");
+			out.println("<p>Cedula :"+cedu+"</p>");
+			out.println("<p>Identificador de sesion:" +session.getId()+"</p>");
+			out.println("<p>Fecha de creacion: "+new Date(session.getCreationTime())+" </p>");
+			
+			out.println("<p>Fecha del ultimo acceso: "+new Date(session.getLastAccessedTime())+" </p>");
+			num = (Integer) session.getAttribute("accesos");
+			out.println("<p> Acesos realizados: "+num+"</p>");
+			out.println("<a href=\"#\">Cerrar Sesion</a>");
+			session.setAttribute("accesos", num+1);
+			
+		}else {
+			out.println("<h1>Gracias por acceder a la calculadora</h1>");
+			String user =(String) session.getAttribute("usuario");
+			String cedu =(String) session.getAttribute("cedula");
+			out.println("<p>Usuario:" +user+"</p>");
+			out.println("<p>Cedula :"+cedu+"</p>");
+			out.println("<p>Identificador de sesion:" +session.getId()+"</p>");
+			out.println("<p>Fecha de creacion: "+new Date(session.getCreationTime())+" </p>");
+			
+			out.println("<p>Fecha del ultimo acceso: "+new Date(session.getLastAccessedTime())+" </p>");
+			num = (Integer) session.getAttribute("accesos");
+			out.println("<p> Acesos realizados: "+num+"</p>");
+			out.println("<a href=\"#\">Cerrar Sesion</a>");
+			session.setAttribute("accesos", num+1);
+			
+		}
+		out.println("</body></html>");
+		
+		
+		
+	}
+
+
+
+	@Override
+	public void destroy() {  
+		System.out.println("Se destruye el Servlet Parametros");
+	}*/
 
 }

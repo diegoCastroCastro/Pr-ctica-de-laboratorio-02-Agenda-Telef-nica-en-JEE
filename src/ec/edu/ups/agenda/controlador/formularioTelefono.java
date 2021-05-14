@@ -65,7 +65,7 @@ public class formularioTelefono extends HttpServlet {
 				"\r\n" );
 
 		out.println("<p ><span style='color: black'>Usuario: </span><span style='color: red'>"+ request.getSession().getAttribute("usuario")+"</span>     "+"<span style='color: black'>Cedula: </span><span style='color: red'> "+ request.getSession().getAttribute("cedula") +"</span>"+"</p>");
-		 
+		 		 
 		out.println(
 				"	<nav class=\"navbar\">\r\n" + 
 				"\r\n" + 
@@ -75,25 +75,23 @@ public class formularioTelefono extends HttpServlet {
 				"				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Inicio</a>\r\n" + 
 				"			</div>\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/quienessomos.jsp\">Crer Telefono</a>\r\n" + 
+				"				<a class=\"navbar-brand\" href=\"/Agenda/formularioTelefono\">Crer Telefono</a>\r\n" + 
 				"			</div>\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
 				"				<a class=\"navbar-brand\" href=\"/Agenda/BuscarPersona.jsp\">Eliminar Telefonos</a>\r\n" + 
 				"			</div>\r\n" + 
 				"			 <div class=\"navbar-header\">\r\n" + 
 				"				<a class=\"navbar-brand\" href=\"/Agenda/login.jsp\">Actualizar Telefono</a>\r\n" + 
-				"			</div>\r\n  <div class=\\\"navbar-header\\\">\\r\\n\" + \r\n" + 
-				"				\"				<a class=\\\"navbar-brand\\\" href=\\\"/Agenda/login.jsp\\\">Actualizar Telefono</a>\\r\\n\" + \r\n" + 
-				"				\"			</div>\\r\\n\" " + 
-				
-				"\r\n" + 
+				"			</div>\r\n");
+				out.println( "  <div class=\"navbar-header\"> <a class=\"navbar-brand\" href=\"/Agenda/listartelefonosprivados\">Listar Telefonos</a> " + "</div>"); 
+				out.println( 
 				"		</div>\r\n" + 
 				"	</nav>\r\n" + 
 				"\r\n" + 
 				"\r\n" + 
 				"	<form action=\"/Agenda/CrearTelefonoController\" class=\"form-register\" method=\"post\">\r\n" + 
 				"		<h4>Formulario Telefono</h4>\r\n" + 
-				"		<input class=\"controls\" type=\"text\" name=\"cedula\" id=\"cedula\" placeholder=\"Ingrese su cedula\"  value="+request.getSession().getAttribute("cedula")+"/>" + 
+				"		<input class=\"controls\" type=\"text\" name=\"cedula\" id=\"cedula\" placeholder=\"Ingrese su cedula\"  value="+request.getSession().getAttribute("cedula")+">" + 
 				"		<input class=\"controls\" type=\"text\" name=\"numero\" id=\"nombres\" placeholder=\"Ingrese numero\" /><br>\r\n" + 
 				"		<input class=\"controls\" type=\"text\" name=\"operadora\" id=\"apellidos\" placeholder=\"Ingrese tipo\" /><br>\r\n" + 
 				"		<input class=\"controls\" type=\"text\" name=\"tipo\" id=\"correo\" placeholder=\"Ingrese su operadora\" /><br>\r\n" + 
