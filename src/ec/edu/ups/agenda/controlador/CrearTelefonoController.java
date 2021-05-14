@@ -48,7 +48,7 @@ public class CrearTelefonoController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("ESTE ES LA CEDULA QUE SE RECIBE > " + request.getParameter("cedula"));
-		Integer ced = Integer.parseInt(request.getParameter("cedula"));
+		String ced = request.getParameter("cedula");
 
 		listaTelefono = telefonoDAO.find(ced);
 		System.out.println("-------------"+listaTelefono.toString());
@@ -88,27 +88,24 @@ public class CrearTelefonoController extends HttpServlet {
 					"<title>Telefonos Listados</title>\r\n" + 
 					"</head>\r\n" + 
 					"<body>\r\n" + 
-					"\r\n" + 
+					"\r\n" );
+			out.println("<p ><span style='color: black'>Usuario: </span><span style='color: red'>"+ request.getSession().getAttribute("usuario")+"</span>     "+"<span style='color: black'>Cedula: </span><span style='color: red'> "+ request.getSession().getAttribute("cedula") +"</span>"+"</p>");
+			 
+			out.print(
 					"	<nav class=\"navbar\">\r\n" + 
 					"\r\n" + 
-					"		<div class=\"container-fluid\">\r\n" + 
-					"\r\n" + 
-					"			<div class=\"navbar-header\">\r\n" + 
-					"				<a class=\"navbar-brand\" href=\"/Agenda/index.jsp\">Agenda</a>\r\n" + 
-					"			</div>\r\n" + 
-					"			<div class=\"navbar-header\">\r\n" + 
-					"				<a class=\"navbar-brand\" href=\"/Agenda/quienessomos.jsp\">Quienes\r\n" + 
-					"					Somos</a>\r\n" + 
-					"			</div>\r\n" + 
-					"			<div class=\"navbar-header\">\r\n" + 
-					"				<a class=\"navbar-brand\" href=\"/Agenda/BuscarPersona.jsp\">Buscar\r\n" + 
-					"					Persona</a>\r\n" + 
-					"			</div>\r\n" + 
-					"			<div class=\"navbar-header\">\r\n" + 
-					"				<a class=\"navbar-brand\" href=\"/Agenda/login.jsp\">Login</a>\r\n" + 
-					"			</div>\r\n" + 
-					"\r\n" + 
-					"		</div>\r\n" + 
+					"		<div class=\"navbar-header\">\\r\\n\" + \r\n" + 
+					"				\"				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Agenda</a>\\r\\n\" + \r\n" + 
+					"				\"			</div>\\r\\n\" + \r\n" + 
+					"				\"			<div class=\"navbar-header\">\\r\\n\" + \r\n" + 
+					"				\"				<a class=\"navbar-brand\" href=\"/Agenda/crudtelefono\">Telefonos</a>\\r\\n\" + \r\n" + 
+					"				\"			</div>\\r\\n\" + \r\n" + 
+					"				\"			<div class=\"navbar-header\">\\r\\n\" + \r\n" + 
+					"				\"				<a class=\"navbar-brand\" href=\"/Agenda/buscarpersona\">Buscar Persona</a>\\r\\n\" + \r\n" + 
+					"				\"			</div>\" + \r\n" + 
+					"				\"			 <div class=\"navbar-header\">\\r\\n\" + \r\n" + 
+					"				\"				<a class=\"navbar-brand\" href=\"/Agenda/salir\">Cerrar Sesion</a>\\r\\n\" + \r\n" + 
+					"				\"			</div>\r\n" + 
 					"	</nav>\r\n" + 
 					"\r\n" + 
 					"	<div class=\"jumbotron text-center\">\r\n" + 

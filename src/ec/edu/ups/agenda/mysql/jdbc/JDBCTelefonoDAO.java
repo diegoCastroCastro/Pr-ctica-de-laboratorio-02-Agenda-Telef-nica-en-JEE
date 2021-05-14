@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ec.edu.ups.agenda.clases.Telefono;
+import ec.edu.ups.agenda.clases.Usuario;
 import ec.edu.ups.agenda.dao.TelefonoDAO;
 
-public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implements TelefonoDAO {
+public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements TelefonoDAO {
 
 	@Override
 	public void crearTabla() {
@@ -18,32 +19,22 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 	}
 
 	@Override
-	public List<Telefono> find(Integer id) {
+	public List<Telefono> find(String usu) {
 
 		// TODO Auto-generated method stub
 		List<Telefono> lista = new ArrayList<Telefono>(); 
 		Telefono tele = null;
 		
-		ResultSet rs = conexion.query("SELECT * FROM Telefono  where cedula ='0" + id +"'");
+		ResultSet rs = conexion.query("SELECT * FROM Telefono  where cedula ='" + usu +"' or correo ='"+usu+"'");
 		 
 		
 		try { 
-/*
-			if (rs != null && rs.next()) { 
-				tele = new Telefono(rs.getInt("codigo"), rs.getString("numero"), rs.getString("tipo"),
-						rs.getString("operadora"), rs.getString("cedula"));
-				System.out.println("Valor de telefono> "+tele.toString());
-				*/
+
 				while (rs.next()) {
 					System.out.println("bucle while");
 					lista.add(new Telefono(rs.getInt("codigo"), rs.getString("numero"), rs.getString("tipo"),
 							rs.getString("operadora"), rs.getString("cedula")));
 				}
-				/*
-			}else {
-				System.out.println("falsoooooo");
-			}
-*/
 		} catch (SQLException e) {
 			// TODO: handle exception
 			System.out.println("ERROR ENN EL LISTA DE TELEFONOS" + e.getMessage());
@@ -60,12 +51,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 				+ telefono.getTipo() + "', '" + telefono.getOperadora() + "', '"+telefono.getUsuario()+"')");
 
 	}
-
-	@Override
-	public Telefono read(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+ 
 
 	@Override
 	public void update(Telefono entity) {
@@ -81,6 +67,13 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 
 	@Override
 	public Telefono login(Telefono entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+ 
+
+	@Override
+	public Telefono read(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
  * @author ADMINX *
  */
 
-@WebServlet("/sesion")
-public class Sesion extends HttpServlet {
+@WebServlet("/buscarpersona")
+public class buscarpersona extends HttpServlet {
 	
 	
 	@Override
@@ -36,9 +36,7 @@ public class Sesion extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		
-		out.println("\r\n" + 
-				"<!DOCTYPE html>\r\n" + 
-				"<html>\r\n" + 
+		out.println(" <html>\r\n" + 
 				"<head>\r\n" + 
 				"<meta charset=\"ISO-8859-1\">\r\n" + 
 				"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n" + 
@@ -60,40 +58,36 @@ public class Sesion extends HttpServlet {
 				"	href=\"css/estilo.css\" />\r\n" + 
 				"<link rel=\"stylesheet\"\r\n" + 
 				"	href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n" + 
-				" \r\n" + 
-				"<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"css/FormularioRegistro.css\" />\r\n" + 
-				"<title>Login</title>\r\n" + 
+				"\r\n" + 
+				"<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\"\r\n" + 
+				"	href=\"css/FormularioRegistro.css\" />\r\n" + 
+				"<title>Bucar por Cedula</title>\r\n" + 
 				"</head>\r\n" + 
 				"<body>\r\n" + 
 				"\r\n" );
-
 		out.println("<p ><span style='color: black'>Usuario: </span><span style='color: red'>"+ request.getSession().getAttribute("usuario")+"</span>     "+"<span style='color: black'>Cedula: </span><span style='color: red'> "+ request.getSession().getAttribute("cedula") +"</span>"+"</p>");
 		 
 		out.println(
 				"	<nav class=\"navbar\">\r\n" + 
 				"\r\n" + 
 				"		<div class=\"container-fluid\">\r\n" + 
-				"		\r\n" + 
-				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Agenda</a>\r\n" + 
-				"			</div>\r\n" + 
-				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/crudtelefono\">Telefonos</a>\r\n" + 
-				"			</div>\r\n" + 
-				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/buscarpersona\">Buscar Persona</a>\r\n" + 
-				"			</div>" + 
-				"			 <div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/salir\">Cerrar Sesion</a>\r\n" + 
-				"			</div>\r\n" + 
 				"\r\n" + 
+				"			<div class=\"navbar-header\">\r\n" + 
+				"				<h2 style=\"color: white\">Buscar Personas por cedula</h2>\r\n" + 
+				"				<form class=\"example\" action=\"/Agenda/CrearTelefonoController\"\r\n" + 
+				"					style=\"margin: auto; max-width: 300px\">\r\n" + 
+				"					<input type=\"text\" placeholder=\"Ingrese Cedula\" name=\"cedula\">\r\n" + 
+				"					<button type=\"submit\">\r\n" + 
+				"						<i class=\"fa fa-search\"></i>\r\n" + 
+				"					</button>\r\n" + 
+				"				</form>\r\n" + 
+				"			</div>\r\n" + 
 				"		</div>\r\n" + 
 				"	</nav>\r\n" + 
 				"\r\n" + 
 				"\r\n" + 
 				"	<div class=\"jumbotron text-center\">\r\n" + 
-				"		<h1>Bienvenido a Agenda Telefonica</h1>\r\n" + 
-				"		<p>Esto es una practica de JEE usando bootstrap y estilos css</p>\r\n" + 
+				"		<h1> Agenda Telefonica</h1> \r\n" + 
 				"	</div>\r\n" + 
 				"\r\n" + 
 				"\r\n" + 

@@ -46,7 +46,7 @@ public class ListarTelefonosPrivados extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("ESTE ES LA CEDULA QUE SE RECIBE > " + request.getParameter("cedula"));
-		Integer ced = Integer.parseInt((String) request.getSession().getAttribute("cedula"));
+		String ced = (String) request.getSession().getAttribute("cedula");
 
 		listaTelefono = telefonoDAO.find(ced);
 		System.out.println("-------------" + listaTelefono.toString());

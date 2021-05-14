@@ -59,8 +59,8 @@ public class LoginServlet extends HttpServlet {
 			
 			System.out.println("sesion TRUE");
 			String cedu = usuario.getCedula();
-			request.getSession().setAttribute("usuario", usu.getNombre());
-			request.getSession().setAttribute("cedula", usu.getCedula());
+			request.getSession(true).setAttribute("usuario", usu.getNombre());
+			request.getSession(true).setAttribute("cedula", usu.getCedula());
 			request.setAttribute("peticion", "Conectado..");
 
 			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");

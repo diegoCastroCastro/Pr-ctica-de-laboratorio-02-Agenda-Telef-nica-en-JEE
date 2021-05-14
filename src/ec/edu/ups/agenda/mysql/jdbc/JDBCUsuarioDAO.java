@@ -74,12 +74,14 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario, Integer> implements 
 		
 	}
 
-	
 	@Override
-	public List<Usuario> find(Integer cedula) {
+	public List<Usuario> find(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	 
+	 
  
 
 }
