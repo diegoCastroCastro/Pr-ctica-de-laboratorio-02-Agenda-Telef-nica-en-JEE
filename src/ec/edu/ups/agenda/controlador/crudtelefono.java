@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,6 +32,8 @@ public class crudtelefono extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
+		if (request.getSession().getAttribute("usuario") != null
+				&& request.getSession().getAttribute("cedula") != null) {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("\r\n" + 
@@ -100,6 +103,10 @@ public class crudtelefono extends HttpServlet {
 				"\r\n" + 
 				"</body>\r\n" + 
 				"</html>");
+		} else {
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/login.jsp");
+			d.forward(request, response);
+		}
 		
 	
 		}

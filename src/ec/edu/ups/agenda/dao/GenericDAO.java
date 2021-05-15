@@ -19,5 +19,7 @@ public interface GenericDAO <T, ID>{
 	
 	public void delete (T entity);
 	
-	public List<T> find(ID id); 
+	public List<T> find1(ID id); 
+
+	public List<T> find(T entity); 
 }
