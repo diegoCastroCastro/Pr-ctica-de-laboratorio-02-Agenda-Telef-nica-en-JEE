@@ -4,6 +4,7 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -12,7 +13,7 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class Filtro
  */
-@WebFilter("/Filtro")
+@WebFilter(servletNames={"/Sesion","listartelefonosprivados","crudtelefono","buscarpersona"})
 public class Filtro implements Filter {
 
     /**
@@ -27,8 +28,7 @@ public class Filtro implements Filter {
 	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
-	}
-
+	} 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
@@ -37,7 +37,15 @@ public class Filtro implements Filter {
 		// place your code here
 
 		// pass the request along the filter chain
+		long inicio = System.currentTimeMillis();
 		chain.doFilter(request, response);
+		System.out.println("INFO: Tiempo de proceso("+(System.currentTimeMillis()-inicio)+" ms");
+
+		System.out.println("SE MUESTRA LA SIGUIENTE CLASE FILTRADA");
+		RequestDispatcher dispa = request.getServletContext().getRequestDispatcher("/login.jsp");
+
+		dispa.forward(request, response);
+		dispa.include(request, response);
 	}
 
 	/**
