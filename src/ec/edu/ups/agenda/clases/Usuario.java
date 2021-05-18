@@ -79,7 +79,6 @@ public class Usuario implements Serializable{
 	public void setListaTelefono(List<Telefono> listaTelefono) {
 		this.listaTelefono = listaTelefono;
 	}
-	
 
 	@Override
 	public String toString() {

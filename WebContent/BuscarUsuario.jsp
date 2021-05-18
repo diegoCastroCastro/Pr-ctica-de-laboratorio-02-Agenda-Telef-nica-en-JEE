@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,37 +24,44 @@
 	href="css/estilo.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-<link rel="stylesheet" type="text/css" media="screen" href="css/FormularioRegistro.css" />
-<title>Login</title>
+
+<link rel="stylesheet" type="text/css" media="screen"
+	href="css/FormularioRegistro.css" />
+<title>Buscar por Cedula</title>
 </head>
 <body>
 
 	<nav class="navbar">
 
 		<div class="container-fluid">
-		
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/index.jsp">Agenda</a>
-			</div>
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/quienessomos.jsp">Quienes
-					Somos</a>
-			</div>
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar Persona</a>
-			</div>
-			 <div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/login.jsp">Login</a>
-			</div>
 
+			<div class="navbar-header">
+				<h2 style="color: white">Buscar Personas por cedula</h2>
+				<form class="example" action="/Agenda/BuscarPersonaController"
+					style="margin: auto; max-width: 300px">
+					<input type="text" placeholder="Ingrese Cedula" name="cedula">
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+					
+					<c:set var="p" scope="request" value="${usuario}" />
+							<h1>Persona encontrada</h1>	
+								<p>Id: ${p.id}</p>
+								<p>Cedula: ${p.cedula}</p>
+								<p>Nombre: ${p.nombre}</p>
+								<p>Apellido: ${p.apellido}</p>
+								<p>Email: ${p.email}</p>
+								<p>Apellido: ${p.contrasenia}</p>
+					<a href="/Agenda/index.html">Regresar al index</a>
+	
+				</form>
+			</div>
 		</div>
 	</nav>
 
 
 	<div class="jumbotron text-center">
-		<h1>Bienvenido a Agenda Telefonica</h1>
-		<p>Esto es una practica de JEE usando bootstrap y estilos css</p>
+		<h1> Agenda Telefonica</h1> 
 	</div>
 
 

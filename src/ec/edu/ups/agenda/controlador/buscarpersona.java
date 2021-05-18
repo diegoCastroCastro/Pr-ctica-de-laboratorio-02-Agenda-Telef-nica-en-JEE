@@ -100,8 +100,6 @@ public class buscarpersona extends HttpServlet {
 			d.forward(request, response);
 		}
 
-		
-	
 		}
 
 	@Override

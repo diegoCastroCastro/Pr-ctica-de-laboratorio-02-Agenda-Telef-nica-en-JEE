@@ -19,7 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/login")
 public class Login extends HttpServlet {
 private static final long serialVersionUID = 1L;
-	 
+	
+	String nombre = "Admin";
+	String clave = "Admin";
+	
 	@Override
 	public void init() throws ServletException{
 		System.out.println("Se instancia el Servlet...");

@@ -45,7 +45,6 @@ public class LoginServlet extends HttpServlet {
 		
 		usuario.setCorreo(usuar);
 		usuario.setContrasenia(password);
-		
 		System.out.println("VALORES PASADOS DES >" + usuario.toString());
 
 		Usuario usu = usuarioDAO.login(usuario);
@@ -54,13 +53,10 @@ public class LoginServlet extends HttpServlet {
 			HttpSession sesion = request.getSession(true);
 			sesion.setAttribute("usuario", usuario.getNombre());
 			sesion.setAttribute("cedula", usuario.getCedula());
-			
-			
-			
 			System.out.println("sesion TRUE");
 			String cedu = usuario.getCedula();
-			request.getSession(true).setAttribute("usuario", usu.getNombre());
-			request.getSession(true).setAttribute("cedula", usu.getCedula());
+			request.getSession().setAttribute("usuario", usu.getNombre());
+			request.getSession().setAttribute("cedula", usu.getCedula());
 			request.setAttribute("peticion", "Conectado..");
 
 			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");
@@ -86,10 +82,8 @@ public class LoginServlet extends HttpServlet {
 		if (usu != null) {
 
 			HttpSession sesion = request.getSession(true);
-			
 			sesion.setAttribute("usuario", usuario.getNombre());
 			sesion.setAttribute("cedula", usuario.getCedula());
-			
 			System.out.println("sesion TRUE");
 
 			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");

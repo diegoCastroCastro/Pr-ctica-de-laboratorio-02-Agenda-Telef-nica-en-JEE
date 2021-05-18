@@ -42,7 +42,10 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/Agenda/quienessomos.jsp">Quienes
 					Somos</a>
-			</div> 
+			</div>
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar Persona</a>
+			</div>
 			 <div class="navbar-header">
 				<a class="navbar-brand" href="/Agenda/login.jsp">Login</a>
 			</div>
