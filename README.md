@@ -69,7 +69,10 @@ Con la conexión realizada y el uso del patrón DAO y demás recursos revisados 
 
 **5. Filtros**
 
-Nos ayuda en la seguridad del acceso a páginas que son privadas, es una manera de implementar seguridad en nuestro proyecto
+Nos ayuda en la seguridad del acceso a páginas que son privadas, es una manera de implementar seguridad en nuestro proyecto.
+
+
+![filtro](https://user-images.githubusercontent.com/49213231/118664686-4c2f5280-b7b7-11eb-9171-ebe529e99f8d.png)
 
 **5. Resultados obtenidos**
 
