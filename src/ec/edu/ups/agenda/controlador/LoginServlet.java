@@ -43,6 +43,15 @@ public class LoginServlet extends HttpServlet {
 		String usuar = request.getParameter("correo");
 		String password = request.getParameter("password");
 		
+		StringBuilder errores = new StringBuilder();
+		
+		if (usuar.isEmpty()) {
+			errores.append("<li>Falta usuario/correo</li>");
+		}
+		if (password.isEmpty()) {
+			errores.append("<li>Falta contraseña</li>");
+		}
+		
 		usuario.setCorreo(usuar);
 		usuario.setContrasenia(password);
 		
@@ -52,6 +61,7 @@ public class LoginServlet extends HttpServlet {
 		if (usu != null) {
 
 			HttpSession sesion = request.getSession(true);
+			
 			sesion.setAttribute("usuario", usuario.getNombre());
 			sesion.setAttribute("cedula", usuario.getCedula());
 			
@@ -59,11 +69,17 @@ public class LoginServlet extends HttpServlet {
 			
 			System.out.println("sesion TRUE");
 			String cedu = usuario.getCedula();
+			
 			request.getSession(true).setAttribute("usuario", usu.getNombre());
 			request.getSession(true).setAttribute("cedula", usu.getCedula());
 			request.setAttribute("peticion", "Conectado..");
 
-			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/Sesion");
+			d.forward(request, response);
+		}else {
+			HttpSession sesion = request.getSession(false);
+			System.out.println("sesion FALSE");
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/Error.jsp");
 			d.forward(request, response);
 		}
 
@@ -92,7 +108,7 @@ public class LoginServlet extends HttpServlet {
 			
 			System.out.println("sesion TRUE");
 
-			RequestDispatcher d = getServletContext().getRequestDispatcher("/sesion");
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/Sesion");
 			d.forward(request, response);
 		} else {
 			HttpSession sesion = request.getSession(false);

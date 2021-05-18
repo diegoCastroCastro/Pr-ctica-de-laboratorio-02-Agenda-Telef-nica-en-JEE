@@ -19,8 +19,10 @@ import javax.servlet.http.HttpSession;
  * @author ADMINX *
  */
 
-@WebServlet("/sesion")
+@WebServlet("/Sesion")
 public class Sesion extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void init() throws ServletException {

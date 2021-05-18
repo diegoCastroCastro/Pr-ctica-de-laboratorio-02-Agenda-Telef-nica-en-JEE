@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Hubo un error</h1>
-	<a href="/Agenda/Menu.jsp">Regresar al Menu</a>
+	<a href="/Agenda/index.jsp">Regresar al inicio</a>
 </body>
 </html>

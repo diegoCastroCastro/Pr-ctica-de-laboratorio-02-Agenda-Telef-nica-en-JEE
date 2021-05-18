@@ -12,24 +12,20 @@ import ec.edu.ups.agenda.dao.DAOFactory;
 import ec.edu.ups.agenda.dao.UsuarioDAO;
 
 /**
- * Servlet implementation class CrearUsuarioController
+ * Servlet implementation class BuscarPersonaController
  */
-@WebServlet("/CrearUsuarioController")
-public class CrearUsuarioController extends HttpServlet {
+@WebServlet("/BuscarPersonaController")
+public class BuscarUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	private UsuarioDAO usuarioDAO;
 	private Usuario usuario;
-	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearUsuarioController() {
-        usuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
-        usuario = new Usuario();
-        
-        
+    public BuscarUsuarioController() {
+    	usuarioDAO = DAOFactory.getFactory().getUsuarioDAO();
+    	usuario = new Usuario();
     }
 
 	/**
@@ -37,9 +33,6 @@ public class CrearUsuarioController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		getServletContext().getRequestDispatcher("/FormularioRegistro.jsp").forward(request, response);
-
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -47,28 +40,18 @@ public class CrearUsuarioController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String url = null;
 		
 		try {
-			usuario.setCedula(request.getParameter("cedula"));
-			usuario.setNombre(request.getParameter("nombres")) ;
-			usuario.setApellido(request.getParameter("apellidos"));
-			usuario.setCorreo(request.getParameter("correo"));
-			usuario.setContrasenia(request.getParameter("contrasenia"));
-			usuarioDAO.crear(usuario);
-			
-			System.out.println("Registro: " + usuario.getCedula() + " " + usuario.getNombre() + " " + 
-			usuario.getApellido() + " " + usuario.getCorreo() + " " + usuario.getContrasenia());
-			
-			url = "/index.jsp";
-			
+			int id = Integer.valueOf(request.getParameter("id"));
+			usuario = usuarioDAO.read(id);
+			request.setAttribute("usuario", usuario);
+			url = "/BuscarUsuario.jsp";
 		} catch (Exception e) {
 			url = "/Error.jsp";
 		}
 		
 		getServletContext().getRequestDispatcher(url).forward(request, response);
-		
 	}
 
 }

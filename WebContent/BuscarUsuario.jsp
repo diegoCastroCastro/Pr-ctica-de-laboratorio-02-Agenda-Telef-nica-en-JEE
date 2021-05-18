@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +27,7 @@
 
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/FormularioRegistro.css" />
-<title>Bucar por Cedula</title>
+<title>Buscar por Cedula</title>
 </head>
 <body>
 
@@ -37,12 +37,23 @@
 
 			<div class="navbar-header">
 				<h2 style="color: white">Buscar Personas por cedula</h2>
-				<form class="example" action="/Agenda/CrearTelefonoController"
+				<form class="example" action="/Agenda/BuscarPersonaController"
 					style="margin: auto; max-width: 300px">
 					<input type="text" placeholder="Ingrese Cedula" name="cedula">
 					<button type="submit">
 						<i class="fa fa-search"></i>
 					</button>
+					
+					<c:set var="p" scope="request" value="${usuario}" />
+							<h1>Persona encontrada</h1>	
+								<p>Id: ${p.id}</p>
+								<p>Cedula: ${p.cedula}</p>
+								<p>Nombre: ${p.nombre}</p>
+								<p>Apellido: ${p.apellido}</p>
+								<p>Email: ${p.email}</p>
+								<p>Apellido: ${p.contrasenia}</p>
+					<a href="/Agenda/index.html">Regresar al index</a>
+	
 				</form>
 			</div>
 		</div>

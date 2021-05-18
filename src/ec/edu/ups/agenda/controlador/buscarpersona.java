@@ -78,7 +78,7 @@ public class buscarpersona extends HttpServlet {
 				"				<h2 style=\"color: white\">Buscar Personas por cedula</h2>\r\n" + 
 				"				<form class=\"example\" action=\"/Agenda/CrearTelefonoController\"\r\n" + 
 				"					style=\"margin: auto; max-width: 300px\">\r\n" + 
-				"					<input type=\"text\" placeholder=\"Ingrese Cedula\" name=\"cedula\">\r\n" + 
+				"					<input type=\"text\" placeholder=\"Ingrese Cedula o Correo\" name=\"cedula\" required>\r\n" + 
 				"					<button type=\"submit\">\r\n" + 
 				"						<i class=\"fa fa-search\"></i>\r\n" + 
 				"					</button>\r\n" + 
@@ -100,8 +100,6 @@ public class buscarpersona extends HttpServlet {
 			d.forward(request, response);
 		}
 
-		
-	
 		}
 
 	@Override

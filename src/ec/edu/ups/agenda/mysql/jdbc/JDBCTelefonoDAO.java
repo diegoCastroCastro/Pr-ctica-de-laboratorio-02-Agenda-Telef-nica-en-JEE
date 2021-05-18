@@ -68,6 +68,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 
 		System.out.println("VALORES "+ telefono.getUsuario().getCedula());
 		System.out.println("VA : "+telefono.getUsuario().getCedula());
+		
 		conexion.update("INSERT Telefono VALUES ('" + telefono.getNumero() + "', '"
 				+ telefono.getTipo() + "', '" + telefono.getOperadora() + "', '"+telefono.getUsuario().getCedula()+"')");
 
@@ -75,8 +76,8 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
  
 
 	@Override
-	public void update(Telefono entity) {
-		// TODO Auto-generated method stub
+	public void update(Telefono telefono) {
+		conexion.update("UPDATE telefono SET numero = '" + telefono.getNumero() + "', tipo ='" + telefono.getTipo() + "', operadora ='" + telefono.getOperadora() + "' WHERE id = '"  + telefono.getUsuario().getCedula() );
 
 	}
 
@@ -105,18 +106,15 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, String> implements
 				List<Telefono> lista = new ArrayList<Telefono>(); 
 				Telefono tele = null;
 				Usuario usua =  new Usuario();
-				
-				/*
-				ResultSet rs = conexion.query("SELECT * FROM Usuario u ,Telefono t where cedula ='" + tel.getUsuario().getCedula() +"' or correo ='"+tel.getUsuario().getCorreo()+"'");
-				*/
-				ResultSet rs = conexion.query(" SELECT * FROM Telefono t , Usuario u  where t.cedula = u.cedula and u.cedula = '"+usu+"' or u.email='"+usu+"'");
 				 
-				
-				
+				ResultSet rs = conexion.query("SELECT * FROM Telefono t , Usuario u  where (t.cedula = u.cedula and u.cedula = '"+usu+"')  or ( t.cedula = u.cedula and u.email='"+usu+"') ");
+				 
 				
 				try { 
 
 						while (rs.next()) {
+							usua.setCorreo(rs.getString("email")); 
+							
 							System.out.println("bucle while");
 							lista.add(new Telefono(  rs.getString("numero"), rs.getString("tipo"),rs.getString("operadora"),usua));
 						}

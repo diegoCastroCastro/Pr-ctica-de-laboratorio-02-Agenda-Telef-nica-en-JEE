@@ -56,6 +56,7 @@ public class CrearTelefonoController extends HttpServlet {
 		//usuario.setCedula(ced);
 
 		listaTelefono = telefonoDAO.find1(request.getParameter("cedula"));
+		
 		System.out.println("-------------" + listaTelefono.toString());
 
 		if (listaTelefono != null) {
@@ -110,8 +111,11 @@ public class CrearTelefonoController extends HttpServlet {
 				for (Telefono telefono : listaTelefono) {
 					out.println("<div class='lis'>"); 
 					out.println("<h5>Numero :" + telefono.getNumero() + "</h5>");
+					Integer num = Integer.parseInt(telefono.getNumero());
+					out.println("<a href=\"tel:+593"+num+"\">LLamar</a>");
 					out.println("<h5>Tipo :" + telefono.getTipo() + "</h5>");
 					out.println("<h5>Operadora :" + telefono.getOperadora() + "</h5>");
+					out.println("<a href=\"mailto:"+ telefono.getUsuario().getCorreo()+"\">"+ telefono.getUsuario().getCorreo()+"</a>");
 					out.println("</div>");
 
 				}
@@ -147,10 +151,16 @@ public class CrearTelefonoController extends HttpServlet {
 			telefono.setTipo(request.getParameter("tipo"));
 			
 			Integer cedu = Integer.parseInt(request.getParameter("cedula"));
+			
 			System.out.println("Valor de ced > "+cedu);
+			
 			usuario = usuarioDAO.read(cedu);
+			
+			
 			System.out.println("VALOR DESDE EL CREAR TELEFONO > "+usuario.toString());
-			telefono.setUsuario(usuario);
+			
+			telefono.setUsuario(usuario);	
+			
 			
 			telefonoDAO.crear(telefono);
 

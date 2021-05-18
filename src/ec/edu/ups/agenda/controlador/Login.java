@@ -40,10 +40,10 @@ private static final long serialVersionUID = 1L;
 				"		<form action=\"inicio\">\r\n" + 
 				"\r\n" + 
 				"			Usuario 		\r\n" + 
-				"			<input type=\"text\" name=\"un\"/><br>		\r\n" + 
+				"			<input type=\"text\" name=\"un\" requerid/><br>		\r\n" + 
 				"		\r\n" + 
 				"			Contraseña\r\n" + 
-				"			<input type=\"text\" name=\"pw\"/><br>\r\n" + 
+				"			<input type=\"text\" name=\"pw\" requerid/><br>\r\n" + 
 				"			\r\n" + 
 				"			<input type=\"submit\" value=\"submit\">			\r\n" + 
 				"		\r\n" + 

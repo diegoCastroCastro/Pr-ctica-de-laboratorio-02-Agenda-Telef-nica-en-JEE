@@ -75,7 +75,7 @@ public class crudtelefono extends HttpServlet {
 				"		<div class=\"container-fluid\">\r\n" + 
 				"		\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
-				"				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Inicio</a>\r\n" + 
+				"				<a class=\"navbar-brand\" href=\"/Agenda/indexprivado.jsp\">Inicio</a>\r\n" + 
 				"			</div>\r\n" + 
 				"			<div class=\"navbar-header\">\r\n" + 
 				"				<a class=\"navbar-brand\" href=\"/Agenda/formularioTelefono\">Crer Telefono</a>\r\n" + 

@@ -31,6 +31,7 @@ public class salir extends HttpServlet {
 			throws ServletException, IOException {
 		/// SE CIERA LA SESSION
 		request.getSession().invalidate();
+		
 		request.getSession(false); 
 		RequestDispatcher d = getServletContext().getRequestDispatcher("/index.jsp");
 		d.forward(request, response);

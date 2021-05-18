@@ -64,7 +64,7 @@ public class formularioTelefono extends HttpServlet {
 
 			out.println("	<nav class=\"navbar\">\r\n" + "\r\n" + "		<div class=\"container-fluid\">\r\n"
 					+ "		\r\n" + "			<div class=\"navbar-header\">\r\n"
-					+ "				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Inicio</a>\r\n"
+					+ "				<a class=\"navbar-brand\" href=\"/Agenda/indexprivado.jsp\">Inicio</a>\r\n"
 					+ "			</div>\r\n" + "			<div class=\"navbar-header\">\r\n"
 					+ "				<a class=\"navbar-brand\" href=\"/Agenda/formularioTelefono\">Crer Telefono</a>\r\n"
 					+ "			</div>\r\n" + "			<div class=\"navbar-header\">\r\n"
@@ -80,9 +80,9 @@ public class formularioTelefono extends HttpServlet {
 					+ "		<h4>Formulario Telefono</h4>\r\n"
 					+ "		<input class=\"controls\" type=\"text\" name=\"cedula\" id=\"cedula\" placeholder=\"Ingrese su cedula\"  value="
 					+ request.getSession().getAttribute("cedula") + ">"
-					+ "		<input class=\"controls\" type=\"text\" name=\"numero\" id=\"nombres\" placeholder=\"Ingrese numero\" /><br>\r\n"
-					+ "		<input class=\"controls\" type=\"text\" name=\"operadora\" id=\"apellidos\" placeholder=\"Ingrese tipo\" /><br>\r\n"
-					+ "		<input class=\"controls\" type=\"text\" name=\"tipo\" id=\"correo\" placeholder=\"Ingrese su operadora\" /><br>\r\n"
+					+ "		<input class=\"controls\" type=\"text\" name=\"numero\" maxlength=\"10\"   pattern=\"[0-9]*\" title=\"Debe solo ingresar numeros\" id=\"nombres\" placeholder=\"Ingrese numero\"  required/><br>\r\n"
+					+ "		<input class=\"controls\" type=\"text\" name=\"operadora\" id=\"apellidos\"  pattern=\"[a-zA-Z]*\" title=\"Debe solo ingresar texto\" placeholder=\"Ingrese tipo\" required/><br>\r\n"
+					+ "		<input class=\"controls\" type=\"text\" name=\"tipo\" id=\"tipo\"  pattern=\"[a-zA-Z]*\" title=\"Debe solo ingresar texto\" placeholder=\"Ingrese su operadora\" required /><br>\r\n"
 					+ "		<input class=\"botons\" type=\"submit\" value=\"Crear Telefono\"> \r\n" + "	</form>"
 					+ "\r\n" + "\r\n" + "</body>\r\n" + "</html>");
 

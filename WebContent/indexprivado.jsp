@@ -35,16 +35,16 @@
 		<div class="container-fluid">
 		
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/index.jsp">Agenda</a>
+				<a class="navbar-brand" href="/Agenda/Sesion">Agenda</a>
 			</div>
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/quienessomos.jsp">Telefonos</a>
+				<a class="navbar-brand" href="/Agenda/crudtelefono">Telefonos</a>
 			</div>
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/BuscarPersona.jsp">Buscar Persona</a>
+				<a class="navbar-brand" href="/Agenda/buscarpersona">Buscar Persona</a>
 			</div>
 			 <div class="navbar-header">
-				<a class="navbar-brand" href="/Agenda/login.jsp">Cerrar Sesion</a>
+				<a class="navbar-brand" href="/Agenda/salir">Cerrar Sesion</a>
 			</div>
 
 		</div>

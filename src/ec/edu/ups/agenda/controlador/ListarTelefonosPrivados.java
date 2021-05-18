@@ -51,6 +51,7 @@ public class ListarTelefonosPrivados extends HttpServlet {
 		String ced = (String) request.getSession().getAttribute("cedula");
 
 		listaTelefono = telefonoDAO.find1(ced);
+		
 		System.out.println("-------------" + listaTelefono.toString());
 
 		if (listaTelefono != null) {
@@ -88,7 +89,7 @@ public class ListarTelefonosPrivados extends HttpServlet {
 
 				out.println("	<nav class=\"navbar\">\r\n" + "\r\n" + "		<div class=\"container-fluid\">\r\n"
 						+ "\r\n" + "			<div class=\"navbar-header\">\r\n"
-						+ "				<a class=\"navbar-brand\" href=\"/Agenda/sesion\">Inicio</a>\r\n"
+						+ "				<a class=\"navbar-brand\" href=\"/Agenda/indexprivado.jsp\">Inicio</a>\r\n"
 						+ "			</div>\r\n" + "			<div class=\"navbar-header\">\r\n"
 						+ "				<a class=\"navbar-brand\" href=\"/Agenda/formularioTelefono\">Crer Telefono</a>\r\n"
 						+ "			</div>\r\n" + "			<div class=\"navbar-header\">\r\n"
