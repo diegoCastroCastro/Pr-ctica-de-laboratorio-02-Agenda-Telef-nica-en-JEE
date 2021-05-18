@@ -69,5 +69,22 @@ Con la conexión realizada y el uso del patrón DAO y demás recursos revisados 
 
 **5. Filtros**
 
+Nos ayuda en la seguridad del acceso a páginas que son privadas, es una manera de implementar seguridad en nuestro proyecto
+
+**5. Resultados obtenidos**
+
+Con la estructura implementada en este proyecto se logró que la información se mas optima, aunque JDBC requiere más recursos en comparación con otros formatos que son las versátiles. Pero para nuestro temario de estudio será bueno asimilar estos conceptos de estudios.
+
 
 **6. Conclusiones**
+
+El desarrollo de la práctica amplio nuestro conocimiento en el tipo de arquitectura que se empleo para el desarrollo del programa, con la capa de presentación que estaría estructurado por todas las paginas JSP y el usuario interactúa a través de páginas web del navegador, en la capa de negocio para este proyecto están conformados por los Servlets, aquí reciben la petición del cliente, realiza el proceso que le corresponde y devuelve una respuesta. En la capa de datos esta conformado por JDBC para el acceso a la base de datos, en esta capa también es posible definir la persistencia de objetos, mientras que los DAO son las interfaces y clases que se relacionan con la base de datos. Las clases JDBC son las clases que definen las implementaciones DAO genéricas para las operaciones de CRUD.
+
+De manera que categorización de las clases en los diferentes paquetes permiten que el programa sea más dinámico con una estructura moderna de programación, también hay que considerar las librerías que se usaron las mismas que nos permiten poder conectarnos a diferentes servicios.
+
+**6. Recomendaciones**
+
+Tener en cuenta las librerías a utilizar, para la base de datos y las librerías para JSTL.  
+
+**Realizado por: Vinicio Veletanga - Diego Castro**
+
